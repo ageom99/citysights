@@ -75,8 +75,7 @@ public class UserLogin extends AppCompatActivity {
                                 //emailid.setError("The response code is "+response.code());
                             }
                             else{
-                                //Toast.makeText(UserLogin.this,"token expiry is "+response.body().tokenExpiry,Toast.LENGTH_LONG).show();
-<<<<<<< HEAD
+
 //                        SharedPreferences sharedPreferences = getSharedPreferences("UserToken", Context.MODE_PRIVATE);
 //                        SharedPreferences.Editor editor = sharedPreferences.edit();
 //                        editor.putString("token", response.body().token);
@@ -86,9 +85,7 @@ public class UserLogin extends AppCompatActivity {
                                 assert response.body() != null;
                                 //Toast.makeText(UserLogin.this,"The token Expiry is"+response.body().getData().getTokenExpiry(),Toast.LENGTH_LONG).show();
 
-                                Intent intent = new Intent(UserLogin.this,DashBoard.class);
-                                startActivity(intent);
-=======
+
                                 SharedPreferences sharedPreferences = getSharedPreferences("UserToken", Context.MODE_PRIVATE);
                                 SharedPreferences.Editor editor = sharedPreferences.edit();
                                 editor.putString("token", response.body().getData().getToken());
@@ -106,7 +103,6 @@ public class UserLogin extends AppCompatActivity {
                                     startActivity(intent);
                                 }
 
->>>>>>> b51c265 (Second Commit)
                                 assert response.body() != null;
                                 Log.d("The expiry of token is", response.body().getData().getTokenExpiry());
                             }
@@ -125,7 +121,7 @@ public class UserLogin extends AppCompatActivity {
 
     }
 
-<<<<<<< HEAD
+
 //    public void LogIn(View view){
 //        emailid = (EditText) findViewById(R.id.user_email);
 //        password = (EditText) findViewById(R.id.user_password);
@@ -186,8 +182,6 @@ public class UserLogin extends AppCompatActivity {
 //        }
 //    }
 
-=======
->>>>>>> b51c265 (Second Commit)
     public void signUp(View view){
         Intent intent = new Intent(UserLogin.this, UserSignUp.class);
         this.startActivity(intent);

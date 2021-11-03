@@ -15,9 +15,6 @@
     <string name="user_registered">The registration was successful, we are redirecting you to login screen. Please Log in again to access the application</string>
     <string name="user_already_registered">The user is already registered with this email id</string>
     <string name="welcome_dashboard">WELCOME TO THE DASHBOARD</string>
-<<<<<<< HEAD
-=======
     <string name="admin_email">email: admin@citisight.com</string>
->>>>>>> b51c265 (Second Commit)
     <string name="registration_error">There was an error while registering, please try again and make sure, the data is correct</string>
 </resources>
