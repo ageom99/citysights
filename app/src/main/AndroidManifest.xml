@@ -13,9 +13,18 @@
         android:theme="@style/Theme.NoActionBar"
         android:usesCleartextTraffic="true">
         <activity
+<<<<<<< HEAD
             android:name=".DashBoard"
             android:exported="false"
             android:theme="@style/Theme.CitySights"/>
+=======
+            android:name=".AdminDashboard"
+            android:exported="false" />
+        <activity
+            android:name=".DashBoard"
+            android:exported="false"
+            android:theme="@style/Theme.CitySights" />
+>>>>>>> b51c265 (Second Commit)
         <activity
             android:name=".UserSignUp"
             android:exported="false"

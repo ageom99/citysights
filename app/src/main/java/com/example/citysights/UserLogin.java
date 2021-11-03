@@ -76,6 +76,7 @@ public class UserLogin extends AppCompatActivity {
                             }
                             else{
                                 //Toast.makeText(UserLogin.this,"token expiry is "+response.body().tokenExpiry,Toast.LENGTH_LONG).show();
+<<<<<<< HEAD
 //                        SharedPreferences sharedPreferences = getSharedPreferences("UserToken", Context.MODE_PRIVATE);
 //                        SharedPreferences.Editor editor = sharedPreferences.edit();
 //                        editor.putString("token", response.body().token);
@@ -87,6 +88,25 @@ public class UserLogin extends AppCompatActivity {
 
                                 Intent intent = new Intent(UserLogin.this,DashBoard.class);
                                 startActivity(intent);
+=======
+                                SharedPreferences sharedPreferences = getSharedPreferences("UserToken", Context.MODE_PRIVATE);
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                editor.putString("token", response.body().getData().getToken());
+                                editor.putString("tokenExpiry",response.body().getData().getTokenExpiry());
+                                editor.apply();
+                                //Toast.makeText(UserLogin.this,response.body().tokenExpiry.)
+                                String metadata = response.body().getMetadata();
+                                //Toast.makeText(UserLogin.this,"The token Expiry is"+response.body().getData().getTokenExpiry(),Toast.LENGTH_LONG).show();
+                                if(metadata == String.valueOf(R.string.admin_email)){
+                                    Intent intent = new Intent(UserLogin.this,AdminDashboard.class);
+                                    startActivity(intent);
+                                }
+                                else{
+                                    Intent intent = new Intent(UserLogin.this,DashBoard.class);
+                                    startActivity(intent);
+                                }
+
+>>>>>>> b51c265 (Second Commit)
                                 assert response.body() != null;
                                 Log.d("The expiry of token is", response.body().getData().getTokenExpiry());
                             }
@@ -105,6 +125,7 @@ public class UserLogin extends AppCompatActivity {
 
     }
 
+<<<<<<< HEAD
 //    public void LogIn(View view){
 //        emailid = (EditText) findViewById(R.id.user_email);
 //        password = (EditText) findViewById(R.id.user_password);
@@ -165,6 +186,8 @@ public class UserLogin extends AppCompatActivity {
 //        }
 //    }
 
+=======
+>>>>>>> b51c265 (Second Commit)
     public void signUp(View view){
         Intent intent = new Intent(UserLogin.this, UserSignUp.class);
         this.startActivity(intent);
