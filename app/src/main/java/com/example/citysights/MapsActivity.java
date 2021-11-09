@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -27,7 +28,11 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         LatLng location = new LatLng(42.320671,-83.027206);
         MarkerOptions options = new MarkerOptions();
         options.position(location);
+        options.title("University of Windsor");
+        options.snippet("This is University of Windsor");
 
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 18f));
+        googleMap.addMarker(options);
     }
 
     @Override
