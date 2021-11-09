@@ -13,13 +13,12 @@
         android:theme="@style/Theme.NoActionBar"
         android:usesCleartextTraffic="true">
         <activity
-
+            android:name=".MapsActivity"
+            android:exported="false" />
+        <activity
             android:name=".DashBoard"
             android:exported="false"
-            android:theme="@style/Theme.CitySights"/>
-            android:name=".AdminDashboard"
-            android:exported="false" />
-
+            android:theme="@style/Theme.CitySights" />
         <activity
             android:name=".UserSignUp"
             android:exported="false"
@@ -36,7 +35,13 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+
         </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyC0sSAoJwM1ixmlffASLaZnDnDVFlgxNXw" />
     </application>
 
 </manifest>

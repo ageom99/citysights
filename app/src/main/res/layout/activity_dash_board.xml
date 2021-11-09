@@ -7,14 +7,20 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:gravity="center"
         android:id="@+id/dashboard_textview"
         android:textColor="@color/red"
         android:textSize="20dp"
         android:text="@string/welcome_dashboard"
-        android:layout_gravity="center"
         />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Click here for maps"
+        android:padding="30dp"
+        android:textSize="20sp"
+        android:onClick="Maps"
+        android:id="@+id/maps_button"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

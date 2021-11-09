@@ -3,8 +3,10 @@ package com.example.citysights;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class DashBoard extends AppCompatActivity {
@@ -30,6 +32,11 @@ public class DashBoard extends AppCompatActivity {
 
         textView.setText("The expiry of login token is "+tokenExpiry);
 
+    }
+
+    public void Maps(View view){
+        Intent intent = new Intent(DashBoard.this, MapsActivity.class);
+        startActivity(intent);
     }
 
 }
