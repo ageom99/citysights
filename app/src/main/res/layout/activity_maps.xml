@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MapsActivity">
+    android:layout_height="match_parent">
 
-    <fragment
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/maps_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        class="com.google.android.gms.maps.SupportMapFragment"/>
+        tools:context=".MapsActivity"
+        android:name="com.google.android.gms.maps.SupportMapFragment"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -21,8 +19,7 @@
         android:layout_marginRight="10dp"
         android:elevation="10dp"
         android:background="@drawable/white_border"
-        android:id="@+id/placePicker"
-        tools:ignore="MissingConstraints">
+        android:id="@+id/placePicker">
 
         <ImageView
             android:layout_width="15dp"
