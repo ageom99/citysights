@@ -13,6 +13,14 @@
         android:theme="@style/Theme.NoActionBar"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".AdminDashboard"
+            android:exported="false"
+            android:theme="@style/Theme.CitySights"/>
+        <activity
+            android:name=".GetUserDetails"
+            android:exported="false"
+            android:theme="@style/Theme.CitySights"/>
+        <activity
             android:name=".MapsActivity"
             android:exported="false" />
         <activity
@@ -35,8 +43,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-
         </activity>
 
         <meta-data
