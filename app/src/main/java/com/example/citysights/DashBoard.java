@@ -30,7 +30,7 @@ public class DashBoard extends AppCompatActivity {
         token = sh.getString("token","");
         tokenExpiry = sh.getString("tokenExpiry","");
 
-        textView.setText("The expiry of login token is "+tokenExpiry);
+//        textView.setText("The expiry of login token is "+tokenExpiry);
 
     }
 

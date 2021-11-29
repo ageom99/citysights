@@ -11,6 +11,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
+import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.EditText;
@@ -96,7 +97,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 //                            Location currentLocation = (Location) task.getResult();
 //                            moveCamera(new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude()),
 //                                    DEFAULT_ZOOM);
-
+//                            LatLng location = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
                             LatLng location = new LatLng(42.30616120908595, -83.05854188012809);
                             mMap.addMarker(new MarkerOptions().position(location).title("Device Location")
                                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
@@ -129,14 +130,28 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         if (mLocationPermissionsGranted) {
             getDeviceLocation();
-            LatLng location = new LatLng(42.31325387611262, -83.06423156225776);
+            LatLng location1 = new LatLng(42.31325387611262, -83.06423156225776);
+            LatLng location2 = new LatLng(42.31579896383909, -83.05876481149883);
+            LatLng location3 = new LatLng(42.310043, -83.072422);
 
             mMap.setOnMarkerClickListener(this);
 
             marker = mMap.addMarker(new MarkerOptions()
-                    .position(location)
+                    .position(location1)
                     .title("Eve's Apple")
                     .snippet("A sweet tourist spot with a nice view of detroit, and really beautiful sunsets."));
+
+            marker = mMap.addMarker(new MarkerOptions()
+                    .position(location2)
+                    .title("Centennial Park")
+                    .snippet("The imposing stone statue standing tall in the middle of the lake."));
+
+            marker = mMap.addMarker(new MarkerOptions()
+                    .position(location3)
+                    .title("Deck under Ambassador Bridge")
+                    .snippet("The deck under the ambassador bridge, " +
+                            "the most nearest point to detroit and one of the " +
+                            "places with the most peaceful environment."));
 
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                     != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this,
@@ -230,6 +245,38 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             title.setText(marker.getTitle());
             snippet.setText(marker.getSnippet());
             img.setImageResource(R.drawable.eve);
+        }
+        else if (markerTitle.equals("Centennial Park"))
+        {
+            Toast.makeText(this, "Marker Accessed", Toast.LENGTH_LONG);
+            setContentView(R.layout.activity_custom_info_window);
+
+            TextView title, snippet;
+            ImageView img;
+
+            title = findViewById(R.id.title);
+            snippet = findViewById(R.id.info);
+            img = findViewById(R.id.image);
+
+            title.setText(marker.getTitle());
+            snippet.setText(marker.getSnippet());
+            img.setImageResource(R.drawable.centennial);
+        }
+        else if (markerTitle.equals("Deck under Ambassador Bridge"))
+        {
+            Toast.makeText(this, "Marker Accessed", Toast.LENGTH_LONG);
+            setContentView(R.layout.activity_custom_info_window);
+
+            TextView title, snippet;
+            ImageView img;
+
+            title = findViewById(R.id.title);
+            snippet = findViewById(R.id.info);
+            img = findViewById(R.id.image);
+
+            title.setText(marker.getTitle());
+            snippet.setText(marker.getSnippet());
+            img.setImageResource(R.drawable.deck);
         }
         return false;
     }
