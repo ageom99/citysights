@@ -17,4 +17,6 @@
     <string name="welcome_dashboard">WELCOME TO THE DASHBOARD</string>
     <string name="admin_email">email: admin@citisight.com</string>
     <string name="registration_error">There was an error while registering, please try again and make sure, the data is correct</string>
+    <string name="location" />
+    <string name="location_information" />
 </resources>

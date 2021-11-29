@@ -1,18 +1,21 @@
 package com.example.citysights;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.pm.PackageManager;
-import android.location.Location;
-import android.nfc.Tag;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -21,13 +24,15 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
-public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener, GoogleMap.OnMarkerDragListener {
+public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener, GoogleMap.OnMarkerDragListener{
 
     private static final String TAG = "MapsActivity";
 
@@ -41,6 +46,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private static final float DEFAULT_ZOOM = 15f;
 
     private EditText mSearchText;
+    private Marker marker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +56,28 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         getLocationPermission();
 
         mSearchText = (EditText) findViewById(R.id.input_search);
+    }
+
+    private BitmapDescriptor BitmapFromVector(Context context, int vectorResId) {
+        // below line is use to generate a drawable.
+        Drawable vectorDrawable = ContextCompat.getDrawable(context, vectorResId);
+
+        // below line is use to set bounds to our vector drawable.
+        vectorDrawable.setBounds(0, 0, vectorDrawable.getIntrinsicWidth(), vectorDrawable.getIntrinsicHeight());
+
+        // below line is use to create a bitmap for our
+        // drawable which we have added.
+        Bitmap bitmap = Bitmap.createBitmap(vectorDrawable.getIntrinsicWidth(), vectorDrawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+
+        // below line is use to add bitmap in our canvas.
+        Canvas canvas = new Canvas(bitmap);
+
+        // below line is use to draw our
+        // vector drawable in canvas.
+        vectorDrawable.draw(canvas);
+
+        // after generating our bitmap we are returning our bitmap.
+        return BitmapDescriptorFactory.fromBitmap(bitmap);
     }
 
     private void getDeviceLocation() {
@@ -65,10 +93,15 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                     public void onComplete(@NonNull Task task) {
                         if (task.isSuccessful()) {
                             Log.d(TAG, "onComplete: found location!");
-                            Location currentLocation = (Location) task.getResult();
+//                            Location currentLocation = (Location) task.getResult();
+//                            moveCamera(new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude()),
+//                                    DEFAULT_ZOOM);
 
-                            moveCamera(new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude()),
-                                    DEFAULT_ZOOM);
+                            LatLng location = new LatLng(42.30616120908595, -83.05854188012809);
+                            mMap.addMarker(new MarkerOptions().position(location).title("Device Location")
+                                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+
+                            moveCamera(location, DEFAULT_ZOOM);
 
                         } else {
                             Log.d(TAG, "onComplete: current location is null");
@@ -96,6 +129,14 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         if (mLocationPermissionsGranted) {
             getDeviceLocation();
+            LatLng location = new LatLng(42.31325387611262, -83.06423156225776);
+
+            mMap.setOnMarkerClickListener(this);
+
+            marker = mMap.addMarker(new MarkerOptions()
+                    .position(location)
+                    .title("Eve's Apple")
+                    .snippet("A sweet tourist spot with a nice view of detroit, and really beautiful sunsets."));
 
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                     != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this,
@@ -170,9 +211,27 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     @Override
-    public boolean onMarkerClick(@NonNull Marker marker) {
-        Log.d("MapsActivity", marker.getTitle());
-        return true;
+    public boolean onMarkerClick(final Marker marker) {
+
+        String markerTitle = marker.getTitle();
+
+        if (markerTitle.equals("Eve's Apple"))
+        {
+            Toast.makeText(this, "Marker Accessed", Toast.LENGTH_LONG);
+            setContentView(R.layout.activity_custom_info_window);
+            
+            TextView title, snippet;
+            ImageView img;
+
+            title = findViewById(R.id.title);
+            snippet = findViewById(R.id.info);
+            img = findViewById(R.id.image);
+
+            title.setText(marker.getTitle());
+            snippet.setText(marker.getSnippet());
+            img.setImageResource(R.drawable.eve);
+        }
+        return false;
     }
 
     @Override
