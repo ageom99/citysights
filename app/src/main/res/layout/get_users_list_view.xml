@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:layout_weight="60"
+                android:text="Anvi Parikh"
+                android:textSize="20dp"
+                android:id="@+id/get_user_name"/>
+            <LinearLayout
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="40"
+                android:orientation="vertical">
+                <TextView
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="parikh9@uwindsor.ca"
+                    android:textSize="15dp"
+                    android:id="@+id/get_user_email"/>
+                <TextView
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="Ahmedabd"
+                    android:textSize="15dp"
+                    android:id="@+id/get_user_address"/>
+
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:layout_weight="60"
+                android:text="Harshil Thakkar"
+                android:textSize="20dp"
+                android:id="@+id/get_user_name1"/>
+            <LinearLayout
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="40"
+                android:orientation="vertical">
+                <TextView
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="harshil@gmail.com"
+                    android:textSize="15dp"
+                    android:id="@+id/get_user_email1"/>
+                <TextView
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="Canada"
+                    android:textSize="15dp"
+                    android:id="@+id/get_user_address1"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:gravity="center"
+                android:text="Ravhan Tansuj"
+                android:textSize="20dp"
+                android:textAlignment="center"
+                android:layout_weight="60"
+                android:id="@+id/get_user_name2"/>
+            <LinearLayout
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="40"
+                android:orientation="vertical">
+                <TextView
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="ravhan@uwindsor.ca"
+                    android:textSize="15dp"
+                    android:id="@+id/get_user_email2"/>
+                <TextView
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="Canada"
+                    android:textSize="15dp"
+                    android:id="@+id/get_user_address2"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:text="Akshita Panchal"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:layout_weight="60"
+                android:id="@+id/get_user_name3"/>
+            <LinearLayout
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="40"
+                android:orientation="vertical">
+                <TextView
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="akshitanpanchal@gmail.com"
+                    android:textSize="15dp"
+                    android:id="@+id/get_user_email3"/>
+                <TextView
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+
+                    android:text="Canada"
+                    android:textSize="15dp"
+                    android:id="@+id/get_user_address3"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+
+                android:text="Akshita Panchal"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:layout_weight="60"
+                android:id="@+id/get_user_name4"/>
+            <LinearLayout
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="40"
+                android:orientation="vertical">
+                <TextView
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+
+                    android:text="akshita@uwindsor.ca"
+                    android:textSize="15dp"
+                    android:id="@+id/get_user_email4"/>
+                <TextView
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+
+                    android:text="Canada"
+                    android:textSize="15dp"
+                    android:id="@+id/get_user_address4"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+
+                android:text="Akshita panchal"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:layout_weight="60"
+                android:id="@+id/get_user_name5"/>
+            <LinearLayout
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="40"
+                android:orientation="vertical">
+                <TextView
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="akshitapanchal@uwindsor.ca"
+                    android:textSize="15dp"
+                    android:id="@+id/get_user_email5"/>
+                <TextView
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="Canada"
+                    android:textSize="15dp"
+                    android:id="@+id/get_user_address5"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:text="Vishval Panchal"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:layout_weight="60"
+                android:id="@+id/get_user_name6"/>
+            <LinearLayout
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="40"
+                android:orientation="vertical">
+                <TextView
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="vishval78@gmail.com"
+                    android:textSize="15dp"
+                    android:id="@+id/get_user_email6"/>
+                <TextView
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:text="Canada"
+                    android:textSize="15dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/get_user_address6"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:text="Dhruvil Patel"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:layout_weight="60"
+                android:id="@+id/get_user_name7"/>
+            <LinearLayout
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="40"
+                android:orientation="vertical">
+                <TextView
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="dhruvilpatel@gmail.com"
+                    android:textSize="15dp"
+                    android:id="@+id/get_user_email7"/>
+                <TextView
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="Canada"
+                    android:textSize="15dp"
+                    android:id="@+id/get_user_address7"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:gravity="center"
+                android:text="Chinmay Vyas"
+                android:textSize="20dp"
+                android:textAlignment="center"
+                android:layout_weight="60"
+                android:id="@+id/get_user_name8"/>
+            <LinearLayout
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="40"
+                android:orientation="vertical">
+                <TextView
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:text="chinmavyas@gmail.com"
+                    android:textSize="15dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/get_user_email8"/>
+                <TextView
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="India"
+                    android:textSize="15dp"
+                    android:id="@+id/get_user_address8"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:text="Mohit Agarwal"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:layout_weight="60"
+                android:id="@+id/get_user_name9"/>
+            <LinearLayout
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="40"
+                android:orientation="vertical">
+                <TextView
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="agarwa61@uwindsor.ca"
+                    android:textSize="15dp"
+                    android:id="@+id/get_user_email9"/>
+                <TextView
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="Canada"
+                    android:textSize="15dp"
+                    android:id="@+id/get_user_address9"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+</ScrollView>

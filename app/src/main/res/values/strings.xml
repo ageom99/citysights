@@ -19,4 +19,6 @@
     <string name="registration_error">There was an error while registering, please try again and make sure, the data is correct</string>
     <string name="location" />
     <string name="location_information" />
+    <string name="admin_dashboard">ADMIN DASHBOARD</string>
+    <string name="enter_address">Enter Address</string>
 </resources>

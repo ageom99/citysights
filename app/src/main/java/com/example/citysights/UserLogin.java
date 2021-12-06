@@ -92,10 +92,11 @@ public class UserLogin extends AppCompatActivity {
                                 editor.putString("tokenExpiry",response.body().getData().getTokenExpiry());
                                 editor.apply();
                                 //Toast.makeText(UserLogin.this,response.body().tokenExpiry.)
-                                String metadata = response.body().getMetadata();
+                                //String metadata = response.body().getMetadata();
                                 //Toast.makeText(UserLogin.this,"The token Expiry is"+response.body().getData().getTokenExpiry(),Toast.LENGTH_LONG).show();
-                                if(metadata == String.valueOf(R.string.admin_email)){
-                                    Intent intent = new Intent(UserLogin.this,AdminDashboard.class);
+                                if(user_email.equals("admin@citisight.com")){
+                                    //Toast.makeText(UserLogin.this, "Condition satisfied", Toast.LENGTH_LONG).show();
+                                    Intent intent = new Intent(UserLogin.this,GetUserDetails.class);
                                     startActivity(intent);
                                 }
                                 else{
